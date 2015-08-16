@@ -18,15 +18,24 @@ angular.module('Myapp', ['ionic', 'Services'])
   });
 })
 
-.controller('GithubController', function($scope, githubService){
-  //$scope.infos = "Merhaba"
+.controller('GithubController', function($scope, $ionicLoading,$timeout, githubService){
+  $scope.show = function() {
+   $ionicLoading.show({
+     template: 'Loading...'
+   });
+  };
+  $scope.hide = function(){
+   $ionicLoading.hide();
+  };
   $scope.infos = []
   $scope.img_visible = false
   $scope.setGithubUser = function(){
     $scope.clear()
+    $scope.show();
     githubService.userInfo($scope.username).then(function(data) {
       $scope.infos = data
       $scope.img_visible = true
+      $scope.hide();
     })
   }
 
@@ -41,6 +50,14 @@ angular.module('Myapp', ['ionic', 'Services'])
     $scope.repos = [];
     $scope.infos = [];
   }
+
+  $scope.doRefresh = function() {
+    $timeout(function() {
+      $scope.clear()
+      $scope.$broadcast('scroll.refreshComplete')
+      console.log("Yenile Yapıldı")
+    },3000)
+  };
 })
 
 angular.module('Services', ['ionic'])
