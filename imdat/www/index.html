@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <!-- <link href="lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet">-->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- ngCordova.js include install(bower install ngCordova)-->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    <!--<script src="lib/ion-md-input/js/ion-md-input.min.js"></script>-->
+  </head>
+  <body ng-app="starter" ng-controller="GeoCtrl">
+
+    <ion-pane>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">Bana Yardım Eden Yok Mu</h1>
+      </ion-header-bar>
+      <ion-content>
+
+        <div class="row">
+          <div class="col col-33 col-offset-33">
+            <button class="button button-fab button-assertive icon ion-android-call waves-effect waves-button waves-light" ng-style= "{'width':'200px', 'height':'200px'}" ng-click="getPosition()">
+              Help me!
+            </button>
+          </div>
+        </div>
+
+        Enlem: {{lat}} Boylam: {{long}}
+      </ion-content>
+      <ion-footer-bar class="bar-footer bar-balanced ">
+        <h1 class="title">Herşey Bu Kadar Kolay Olsa</h1>
+    </ion-footer-bar>
+    </ion-pane>
+  </body>
+</html>
