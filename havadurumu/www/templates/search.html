@@ -1,0 +1,17 @@
+<ion-view view-title="İl Seç">
+  <ion-content>
+    <h1>İller</h1>
+    <!--  <select ng-options="plaka as ad for (plaka, ad) in cities"
+      ng-model="selectedCity" ng-change="citychange()"></select> -->
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="CityName" ng-model="cityname">
+        </label>
+        <button class="button button-small" ng-click="tiklandi(cityname)">
+          Hava Durumu
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
