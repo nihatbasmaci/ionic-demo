@@ -10,9 +10,12 @@ angular.module('weather.controllers', ['weather.services'])
     58: "SİVAS",63: "ŞANLIURFA",73: "ŞIRNAK",59: "TEKİRDAĞ",60: "TOKAT",61: "TRABZON",62: "TUNCELİ",64: "UŞAK",65: "VAN",77: "YALOVA",66: "YOZGAT",67: "ZONGULDAK"
   }
 
-  //$scope.citychange = function(){
-    //console.log($scope.selectedCity)
-//  }
+  $scope.citychange = function(selectedCity){
+    havadurumu.ne($scope.cities[selectedCity]).then(function(data){
+      $scope.havanedurumda = data
+      $state.go("app.weather")
+    })
+  }
 
   $scope.tiklandi = function(cityname){
     havadurumu.ne(cityname).then(function(data){

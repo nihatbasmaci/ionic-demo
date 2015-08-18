@@ -1,8 +1,16 @@
 <ion-view view-title="İl Seç">
   <ion-content>
-    <h1>İller</h1>
-    <!--  <select ng-options="plaka as ad for (plaka, ad) in cities"
-      ng-model="selectedCity" ng-change="citychange()"></select> -->
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          <h1>İller</h1>
+        </div>
+        <select ng-options="plaka as ad for (plaka, ad) in cities"
+          ng-model="selectedCity" ng-change="citychange(selectedCity)">
+        <option value='' disabled selected>Lütfen İl Seçiniz</option>
+        </select>
+      </label>
+    </div>
     <div class="list">
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
